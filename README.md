@@ -29,7 +29,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 
 ---
 
-## Table of Contents
+## Contents
 
 - [TL;DR](#tldr)
 - [Visual Overview](#visual-overview)
