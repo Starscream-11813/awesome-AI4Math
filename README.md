@@ -486,9 +486,9 @@ Topics treated in the survey's failure-mode section:
 ## Section VIII — Mathematicians' Perspectives
 
 - **[Machine-Assisted Proof](https://par.nsf.gov/servlets/purl/10576323)** — Tao. *2024.*
-- **AI Will Become Mathematicians' Co-Pilot** — Tao. *Scientific American interview, 2024.*
-- **AI Is Ready for Primetime in Math and Theoretical Physics** — Tao. *IPAM talk, OpenAI Academy, 2026.*
-- **Mathematical methods and human thought in the age of AI** — Klowden & Tao. *Blackwell Companion to the Philosophy of Mathematics (to appear), 2026.*
+- **[AI Will Become Mathematicians' Co-Pilot](https://www.scientificamerican.com/article/ai-will-become-mathematicians-co-pilot/)** — Tao. *Scientific American interview, 2024.*
+- **[AI Is Ready for Primetime in Math and Theoretical Physics](https://academy.openai.com/public/blogs/terence-tao-ai-is-ready-for-primetime-in-math-and-theoretical-physics-2026-03-06)** — Tao. *IPAM talk, OpenAI Academy, 2026.*
+- **[Mathematical methods and human thought in the age of AI](https://arxiv.org/pdf/2603.26524)** — Klowden & Tao. *Blackwell Companion to the Philosophy of Mathematics (to appear), 2026.* — [blog post](https://terrytao.wordpress.com/2026/03/29/mathematical-methods-and-human-thought-in-the-age-of-ai/)
 
 ---
 
