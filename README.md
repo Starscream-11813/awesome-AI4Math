@@ -5,11 +5,12 @@
 
 <p>
 <a href="https://github.com/sindresorhus/awesome#readme"><img alt="Awesome" src="https://awesome.re/badge.svg"></a>
-<a href="https://arxiv.org/abs/2606.08728"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2606.08728-b31b1b.svg?style=flat-square"></a>
-<a href="#citation"><img alt="Citation" src="https://img.shields.io/badge/BibTeX-cite-blue.svg?style=flat-square"></a>
-<a href="#license"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square"></a>
-<img alt="Last updated" src="https://img.shields.io/badge/last%20updated-May%202026-informational.svg?style=flat-square">
-<img alt="Papers" src="https://img.shields.io/badge/papers-238-orange.svg?style=flat-square">
+<a href="https://arxiv.org/abs/2606.08728"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2606.08728-b31b1b.svg?style=flat"></a>
+<a href="#citation"><img alt="Citation" src="https://img.shields.io/badge/BibTeX-cite-blue.svg?style=flat"></a>
+<a href="#license"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat"></a>
+<img alt="Last updated" src="https://img.shields.io/badge/last%20updated-May%202026-informational.svg?style=flat">
+<img alt="Papers" src="https://img.shields.io/badge/papers-238-orange.svg?style=flat">
+<img alt="Visitors" src="https://hits.sh/github.com/Starscream-11813/awesome-AI4Math.svg?style=flat&logo=github&label=Visitors&color=b57edc">
 </p>
 
 <p><em>A companion resource hub for the survey paper. This page indexes every system, dataset, benchmark, and methodology the survey discusses, organised by the same four-axis taxonomy: <strong>informal text-only · multimodal · formal · discovery</strong>.</em></p>
