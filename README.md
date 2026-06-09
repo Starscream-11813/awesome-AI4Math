@@ -5,7 +5,7 @@
 
 <p>
 <a href="https://github.com/sindresorhus/awesome#readme"><img alt="Awesome" src="https://awesome.re/badge.svg"></a>
-<img alt="arXiv preprint — link withheld to preserve anonymity" src="https://img.shields.io/badge/arXiv-link%20withheld%20for%20anonymity-b31b1b.svg?style=flat-square">
+<a href="https://arxiv.org/abs/2606.08728"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2606.08728-b31b1b.svg?style=flat-square"></a>
 <a href="#citation"><img alt="Citation" src="https://img.shields.io/badge/BibTeX-cite-blue.svg?style=flat-square"></a>
 <a href="#license"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square"></a>
 <img alt="Last updated" src="https://img.shields.io/badge/last%20updated-May%202026-informational.svg?style=flat-square">
@@ -514,12 +514,12 @@ Topics treated in the survey's failure-mode section:
 If this survey or this companion list helps your research, please cite:
 
 ```bibtex
-@article{ai4mathsurvey2026,
+@article{raiyan2026ai4mathsurvey,
   title   = {Artificial Intelligence for Mathematical Reasoning:
              An Integrated Survey of Language Models, Neuro-symbolic Systems,
              and Verified Discovery},
-  author  = {Anonymous authors},
-  journal = {arXiv preprint},
+  author  = {Raiyan, Syed Rifat and Kabir, Mohsinul and Mahmud, Hasan and Hasan, Md Kamrul},
+  journal = {arXiv preprint arXiv:2606.08728},
   year    = {2026}
 }
 ```
