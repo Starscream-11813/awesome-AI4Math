@@ -72,23 +72,23 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 
 <div align="center">
 <img src="images/benchmark_trends.png" alt="Benchmark saturation trends" width="100%">
-<p><em>Three patterns: (i) <strong>GSM8K and MATH have effectively saturated</strong> — both clear 95% by 2025; (ii) <strong>AIME 2024, FrontierMath, and PutnamBench show a discontinuity</strong> at the onset of the reasoning-model era; (iii) <strong>formal proving has moved fastest in relative terms</strong> — MiniF2F-test rose from ~25% (2022) to 93% (2026); PutnamBench from near-zero to over 60% in just over a year.</em></p>
+<p><em>Three patterns: (i) <strong>GSM8K and MATH have effectively saturated</strong> — both clear 95% by 2025; (ii) <strong>AIME 2024, FrontierMath, and PutnamBench show a discontinuity</strong> at the onset of the reasoning-model era; (iii) <strong>formal proving has moved fastest in relative terms</strong> — MiniF2F-test rose from ~25% (2022) to 90.4% on the standard benchmark, with AlphaProof reporting 99.6% on a corrected variant under a much larger TTRL budget; on the full PutnamBench, Goedel-Prover V2 reaches 86/658 (13.1%), while AlphaProof's higher percentage uses a held-out 189-problem test split.</em></p>
 </div>
 
 | Benchmark | Pre-DL | Seq2Tree | LLM era | Reasoning era |
 |---|---|---|---|---|
 | **MAWPS** | ~60% | 92.0% | >95% | >99% |
-| **GSM8K** | — | 55% | 94.6% *(GPT-4o)* | 97.3% *(Kimi K2)* |
-| **MATH-500** | — | 6.9% *(GPT-3)* | 52% *(GPT-4)* | 99.2% *(LongCat)* |
+| **GSM8K** | — | 55% | 94.6% *(GPT-4o)* | 97.3% *(Kimi K2)*§ |
+| **MATH-500** | — | 6.9% *(GPT-3)* | 52% *(GPT-4)* | 99.2% *(LongCat-Flash)*§ |
 | **AIME 2024** | — | — | 12% *(GPT-4o)* | 91.6% *(o3)* |
-| **AIME 2025** | — | — | — | 94.6% *(SU-01 / GPT-5.5 H)* |
-| **GPQA-D** | — | — | 53.6% *(GPT-4o)* | 94.6% *(Claude Mythos)* |
-| **FrontierMath** | — | — | <2% *(GPT-4o)* | 48% *(co-math. T4)*ᶧ |
-| **MiniF2F-test** | — | — | 50% *(DSP-V1)* | 99.6% *(AlphaProof + TTRL)* |
-| **PutnamBench** | — | — | — | 86/658 *(Goedel-V2-32B)* |
+| **AIME 2025** | — | — | — | 94.6% *(SU-01)* |
+| **GPQA-D** | — | — | 53.6% *(GPT-4o)* | 94.6% *(Claude Mythos)*§ |
+| **FrontierMath** | — | — | <2% *(GPT-4o)* | 48% *(co-math. T4)*† |
+| **MiniF2F-test** | — | — | 50% *(DSP-V1)* | 90.4% *(Goedel-V2-32B)*; 99.6% *(AlphaProof + TTRL)*‡ |
+| **PutnamBench** | — | — | — | 86/658 (13.1%) *(Goedel-V2-32B)* |
 | **IMO-ProofBench** | — | — | — | 80.7% *(GPT-5.5 H)* |
 
-<sub>ᶧ Tier-4 (research grade); other rows are Tier 1–3 average.</sub>
+<sub>† Tier-4 (research grade); other FrontierMath figures are Tier 1–3 averages. § Provisional, self-reported live-leaderboard snapshot rather than a controlled evaluation. ‡ AlphaProof uses a corrected, expert-formalised MiniF2F variant and multi-day TTRL, so its result is not directly comparable with standard MiniF2F-test runs.</sub>
 
 ---
 
@@ -151,7 +151,6 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 - **[SMART — Situation model for algebra story problems via attributed grammar](https://arxiv.org/pdf/2012.14011)** — Hong et al. *AAAI, 2021.*
 - **[Learning by fixing — Weakly supervised MWPs](https://arxiv.org/pdf/2012.10582)** — Hong et al. *AAAI, 2021.*
 - **[Recall and Learn — Memory-augmented MWP solver](https://arxiv.org/pdf/2109.13112)** — Huang et al. *arXiv:2109.13112, 2021.*
-- **[Are NLP models really able to solve simple math word problems? (SVAMP)](https://arxiv.org/pdf/2103.07191)** — Patel et al. *NAACL, 2021.*
 - **[Generate & Rank — Multi-task framework for MWPs](https://arxiv.org/pdf/2109.03034)** — Shen et al. *arXiv:2109.03034, 2021.*
 
 ### Robustness & Probing Benchmarks
@@ -183,6 +182,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 - **[PAL — Program-Aided Language Models](https://arxiv.org/pdf/2211.10435)** — Gao et al. *ICML, 2023.*
 - **[PoT — Program of Thoughts](https://arxiv.org/pdf/2211.12588)** — Chen et al. *TMLR, 2023.*
 - **[ToRA — Tool-Integrated Reasoning Agent](https://arxiv.org/pdf/2309.17452)** — Gou et al. *ICLR, 2024.*
+- **[Chameleon — Plug-and-play compositional reasoning with LLMs](https://arxiv.org/pdf/2304.09842)** — Lu et al. *NeurIPS, 2023.* — LLM planner composes external tools for ScienceQA and TabMWP.
 - **[Code to think, think to code](https://arxiv.org/pdf/2502.19411)** — Yang et al. *arXiv:2502.19411, 2025.* — survey of code-enhanced reasoning.
 
 ### Self-Improvement & Bootstrapping
@@ -193,7 +193,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 - **[ReFT — Reasoning with reinforced fine-tuning](https://aclanthology.org/2024.acl-long.410.pdf)** — Luong et al. *ACL, 2024.*
 - **[LIMO — Less is more for reasoning](https://arxiv.org/pdf/2502.03387)** — Ye et al. *arXiv:2502.03387, 2025.*
 - **[SCoRe — Training LMs to self-correct via RL](https://arxiv.org/pdf/2409.12917)** — Kumar et al. *arXiv:2409.12917, 2024.*
-- **[rStar-Math — Small LLMs master math via self-evolved deep thinking](https://arxiv.org/pdf/2404.07846)** — Guan et al. *arXiv:2404.07846, 2025.*
+- **[rStar-Math — Small LLMs can master math reasoning with self-evolved deep thinking](https://arxiv.org/pdf/2501.04519)** — Guan et al. *ICML, 2025.*
 
 ### Multi-Agent & Agentic Reasoning
 
@@ -258,7 +258,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 - **[GeoShader — Synthesis of solutions for shaded-area problems](https://cdn.aaai.org/ocs/15416/15416-68619-1-PB.pdf)** — Alvin et al. *FLAIRS, 2017.*
 - **[GEOS-OS — Learning to solve geometry problems from textbook demonstrations](https://aclanthology.org/S17-1029.pdf)** — Sachan & Xing. *\*SEM, 2017.*
 - **[Wu's method — On the decision problem and mechanisation of theorem-proving in elementary geometry](https://www.worldscientific.com/doi/10.1142/9789812791085_0008)** — Wu. *Scientia Sinica, 1978.*
-- **[Wu's method revisited (Sinha et al.)](https://arxiv.org/pdf/2404.06405)** — *NeurIPS, 2024.* — careful JGEX reimplementation solves 15/30 IMO-AG-30; Wu + AG = 27/30.
+- **[Wu's method can boost symbolic AI to rival silver medalists and AlphaGeometry to outperform gold medalists](https://arxiv.org/pdf/2404.06405)** — Sinha, Prabhu, Kumaraguru, Bhat, Bethge. *NeurIPS Math-AI Workshop, 2024.* — careful JGEX reimplementation solves 15/30 IMO-AG-30; Wu + AG = 27/30.
 
 ### Neuro-symbolic & Neural GPS
 
@@ -270,21 +270,22 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 - **[Pi-GPS — Unleashing the power of diagrammatic information](https://arxiv.org/pdf/2503.05543)** — Zhao et al. *ICCV, 2025.*
 - **[FGeo-HyperGNet — FormalGeo + hypergraph neural network](https://arxiv.org/pdf/2402.11461)** — Zhang et al. *IJCAI, 2025.*
 - **[MARS-GPS — Multi-CoT voting for geometric reasoning](https://arxiv.org/pdf/2604.00890)** — Siddique et al. *arXiv:2604.00890, 2026.* — 88.8/77.48 on Geo3K/PGPS9K.
+- **[AutoGPS — Automated geometry problem solving via multimodal formalization and deductive reasoning](https://arxiv.org/pdf/2505.23381)** — Ping et al. *ICLR, 2026.* — +9.2% on PGPS9K; 99% stepwise logical accuracy.
 
 ### Olympiad Geometry (AlphaGeometry family, TongGeometry)
 
 - **[AlphaGeometry — Solving olympiad geometry without human demonstrations](https://www.nature.com/articles/s41586-023-06747-5)** — Trinh et al. *Nature 625, 2024.* — 25/30 on IMO-AG-30.
-- **[AlphaGeometry 2 — Gold-medalist performance](https://arxiv.org/pdf/2502.03544)** — Chervonyi et al. *arXiv:2502.03544, 2025.* — 30/30 (IMO-AG-30 full setup), 42/50 (IMO-AG-50).
-- **[TongGeometry — Guided tree search](https://www.nature.com/articles/s42256-025-01164-x)** — Zhang et al. *Nature Machine Intelligence, 2026.* — 30/30 on IMO-AG-30 with consumer hardware.
+- **[AlphaGeometry 2 — Gold-medalist performance](https://www.jmlr.org/papers/v26/25-1654.html)** — Chervonyi et al. *JMLR 26, 2025.* — 30/30 (IMO-AG-30 full setup), 42/50 (IMO-AG-50).
+- **[TongGeometry — Guided tree search](https://www.nature.com/articles/s42256-025-01164-x)** — Zhang et al. *Nature Machine Intelligence, 2026.* — 30/30 on IMO-AG-30 in ≤38 min using 32 CPU cores and one RTX 4090.
 
 ### Vision–Language Models for Math
 
 - **[G-LLaVA — Solving geometric problems with a multimodal LLM](https://arxiv.org/pdf/2312.11370)** — Gao et al. *arXiv:2312.11370, 2023.*
 - **[MAVIS — Mathematical visual instruction tuning](https://arxiv.org/pdf/2407.08739)** — Zhang et al. *arXiv:2407.08739, 2024.*
 - **[MINT-CoT — Interleaved visual tokens in mathematical CoT](https://arxiv.org/pdf/2506.05331)** — Chen et al. *NeurIPS, 2025.*
-- **[R1-V — Reinforcing super-generalisation in VLMs](https://arxiv.org/pdf/2501.12015)** — Chen et al. *arXiv:2501.12015, 2025.*
+- **[R1-V — Reinforcing super generalization ability in VLMs with less than \$3](https://github.com/Deep-Agent/R1-V)** — Chen et al. *GitHub release, 2025.*
 - **[MM-Eureka — Visual aha moment via rule-based RL](https://arxiv.org/pdf/2503.07365)** — Meng et al. *arXiv:2503.07365, 2025.*
-- **[GeoGRPO — Stepwise-GRPO in RLHF for geometry](https://link.springer.com/chapter/10.1007/978-3-032-09368-4_21)** — Jiang et al. *LNCS Springer, 2025.* — 80.6 GeoQA / 73.4 MathVista.
+- **[GeoGRPO — Investigating the Stepwise-GRPO enhancement in RLHF](https://link.springer.com/chapter/10.1007/978-3-032-09368-4_21)** — Liang et al. *ICDAR 2025 Workshops, LNCS 16225.* — 80.6 GeoQA / 73.4 MathVista.
 - **[Qwen2-VL](https://arxiv.org/pdf/2409.12191)** — Wang et al. *arXiv:2409.12191, 2024.*
 - **[Qwen2.5-VL](https://arxiv.org/pdf/2502.13923)** — Bai et al. *arXiv:2502.13923, 2025.*
 
@@ -294,7 +295,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 
 ### Tactic Prediction & Search
 
-- **[GPT-f — Generative language modeling for automated theorem proving](https://arxiv.org/pdf/2009.03393)** — Polu & Sutskever. *arXiv:2009.03393, 2020.* — 700M parameters.
+- **[GPT-f — Generative language modeling for automated theorem proving](https://arxiv.org/pdf/2009.03393)** — Polu & Sutskever. *arXiv:2009.03393, 2020.* — 774M trainable parameters (called the “700M” model in the paper).
 - **[HyperTree Proof Search](https://arxiv.org/pdf/2205.11491)** — Lample et al. *NeurIPS, 2022.* — AlphaZero-style MCTS over proof states.
 - **[Draft, Sketch and Prove (DSP)](https://arxiv.org/pdf/2210.12283)** — Jiang et al. *ICLR, 2023.* — informal-proof-guided formalisation.
 - **[Baldur — Whole-proof generation and repair](https://arxiv.org/pdf/2303.04910)** — First et al. *FSE, 2023.*
@@ -324,14 +325,14 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 ### Autoformalisation & Library Building
 
 - **[Autoformalisation with large language models](https://arxiv.org/pdf/2205.12615)** — Wu et al. *NeurIPS, 2022.*
-- **[Improving autoformalisation using type checking](https://arxiv.org/pdf/2406.07222)** — Poiroux et al. *arXiv:2406.07222, 2024.*
-- **[PDA — Process-Driven Autoformalisation in Lean 4](https://arxiv.org/pdf/2406.01940)** — Jiang et al. *arXiv:2406.01940, 2024.*
+- **[Reliable evaluation and benchmarks for statement autoformalization](https://arxiv.org/pdf/2406.07222)** — Poiroux et al. *EMNLP, 2025.*
+- **[PDA — Process-Driven Autoformalization in Lean 4](https://arxiv.org/pdf/2406.01940)** — Lu et al. *arXiv:2406.01940, 2024.*
 - **[MathlibLemma — Folklore lemma generation](https://arxiv.org/pdf/2602.02561)** — Liu et al. *arXiv:2602.02561, 2026.* — multi-agent Discovery/Judge/Formaliser.
 - **[The mathlib library](https://leanprover-community.github.io/mathlib4_docs/)** — *Lean mathlib community.*
 
 ### Compiler-Guided Repair
 
-- **[APOLLO — Automated LLM + Lean collaboration for proof repair](https://arxiv.org/pdf/2505.05758)** — Sun et al. *arXiv:2505.05758, 2025.* — 84.9% miniF2F at ≤8B.
+- **[APOLLO — Automated LLM and Lean collaboration for advanced formal reasoning](https://arxiv.org/pdf/2505.05758)** — Ospanov, Farnia, Yousefzadeh. *NeurIPS, 2025.* — 84.9% miniF2F at <8B.
 
 ---
 
@@ -351,7 +352,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 
 ### Research Workbench Mode
 
-- **[AI co-mathematician — Accelerating mathematicians with agentic AI](https://arxiv.org/pdf/2605.06651)** — Zheng et al. *arXiv:2605.06651, 2026.* — Google's hierarchical agent workbench; 48% on FrontierMath Tier 4; solves Kourovka 21.10, Stirling log-concavity, Hamiltonian perturbation lemma.
+- **[AI co-mathematician — Accelerating mathematicians with agentic AI](https://arxiv.org/pdf/2605.06651)** — Zheng et al. *arXiv:2605.06651, 2026.* — Google's hierarchical agent workbench; 48% on FrontierMath Tier 4; reports non-trivial contributions to work on Kourovka 21.10, Stirling log-concavity, and a Hamiltonian perturbation lemma.
 - **[Aletheia — Towards autonomous mathematics research](https://arxiv.org/pdf/2602.10177)** — Feng et al. *arXiv:2602.10177, 2026.*
 
 ---
@@ -370,7 +371,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 | ASDiv | 2,305 | EN | 2020 | [PDF](https://arxiv.org/pdf/2106.15772) |
 | AQuA | 97,975 | EN | 2017 | [PDF](https://arxiv.org/pdf/1705.04146) |
 | Math23K | 23,162 | ZH | 2017 | [PDF](https://aclanthology.org/D17-1088.pdf) |
-| Ape210K | 210,488 | ZH | 2020 | [PDF](https://arxiv.org/pdf/2009.11506) |
+| Ape210K | 210,488 | ZH | 2020 | [paper](https://arxiv.org/abs/2009.11506) |
 | MathQA | 37,297 | EN | 2019 | [PDF](https://arxiv.org/pdf/1905.13319) |
 | SVAMP | 1,000 | EN | 2021 | [PDF](https://arxiv.org/pdf/2103.07191) |
 | ParaMAWPS | 16,278 | EN | 2023 | [PDF](https://aclanthology.org/2023.acl-srw.49.pdf) |
@@ -400,7 +401,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 | HRM8K | Korean–English · 8K | 2025 | [PDF](https://arxiv.org/pdf/2501.02448) |
 | PatiGonit | Bengali · 10K | 2025 | [PDF](https://arxiv.org/pdf/2501.02599) |
 | BMWP | Bengali · 8.7K | 2025 | [PDF](https://link.springer.com/article/10.1007/s44163-025-00243-7) |
-| PolyMath | 18 langs · ~9K | 2025 | [paper](https://arxiv.org/abs/2510.14573) |
+| PolyMath | 18 langs · 9K | 2025 | [PDF](https://arxiv.org/pdf/2504.18428) |
 | MathMist | 13 langs · ~30K | 2026 | [PDF](https://aclanthology.org/2026.findings-eacl.131.pdf) |
 | M3Kang | 108 langs · 108K variants | 2026 | [PDF](https://arxiv.org/pdf/2601.16218) |
 
@@ -411,7 +412,6 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 - **[TAT-QA](https://arxiv.org/pdf/2105.07624)** — Zhu et al. *ACL, 2021.* — 16,552 hybrid table+text questions.
 - **[MultiHiertt](https://aclanthology.org/2022.acl-long.454.pdf)** — Zhao et al. *ACL, 2022.* — 10,440 multi-hierarchy tables.
 - **[MultiTabQA](https://aclanthology.org/2023.acl-long.348.pdf)** — Pal et al. *ACL, 2023.*
-- **[Chameleon](https://arxiv.org/pdf/2304.09842)** — Lu et al. *NeurIPS, 2024.*
 
 ### Geometry & Multimodal
 
@@ -459,7 +459,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 - **[MetaMathQA](https://arxiv.org/pdf/2309.12284)** — Yu et al. *2024.* — 395K backward-rewritten questions.
 - **[NuminaMath](http://faculty.bicmr.pku.edu.cn/~dongbin/Publications/numina_dataset.pdf)** — *2024.* — 860K+ multi-source competition SFT data.
 
-### Tabular Math, Scientific & Adjacent Benchmarks
+### Scientific & Adjacent Benchmarks
 
 - **[SciBench](https://arxiv.org/pdf/2307.10635)** — Wang et al. *ICML, 2024.* — 869 college-level physics/chemistry/calculus problems.
 - **[SciEval](https://arxiv.org/pdf/2308.13149)** — Sun et al. *AAAI, 2024.* — 18K research-paper comprehension + experimental reasoning items.
@@ -496,7 +496,7 @@ Topics treated in the survey's failure-mode section:
 
 | Authors | Title | Scope | Year | Venue | Paper |
 |---|---|---|---|---|---|
-| Zhang et al. | The Gap of Semantic Parsing: A Survey on Automatic Math Word Problem Solvers | MWP solvers (statistical → neural) | 2018 | arXiv | [PDF](https://arxiv.org/pdf/1808.07290) |
+| Zhang et al. | The Gap of Semantic Parsing: A Survey on Automatic Math Word Problem Solvers | MWP solvers (statistical → neural) | 2020 | IEEE TPAMI | [DOI](https://doi.org/10.1109/TPAMI.2019.2914054) |
 | Mukherjee & Garain | A Review of Methods for Automatic Understanding of Natural-Language Mathematical Problems | Pre-DL MWP understanding | 2008 | AI Review | [Springer](https://link.springer.com/article/10.1007/s10462-009-9110-0) |
 | Sundaram et al. | Why are NLP Models Fumbling at Elementary Math? A Survey of Deep Learning based Word Problem Solvers | Neural MWP solvers | 2022 | arXiv | [PDF](https://arxiv.org/pdf/2205.15683) |
 | Lu et al. | A Survey of Deep Learning for Mathematical Reasoning | Deep-learning era MWP/proving/geometry | 2023 | ACL | [PDF](https://aclanthology.org/2023.acl-long.817.pdf) |
@@ -519,7 +519,7 @@ If this survey or this companion list helps your research, please cite:
   title   = {Artificial Intelligence for Mathematical Reasoning:
              An Integrated Survey of Language Models, Neuro-symbolic Systems,
              and Verified Discovery},
-  author  = {Raiyan, Syed Rifat and Kabir, Mohsinul and Mahmud, Hasan and Hasan, Md Kamrul},
+  author  = {Raiyan, Syed Rifat and Kabir, Mohsinul and Mahmud, Hasan and Hasan, Md Kamrul and Ananiadou, Sophia},
   journal = {arXiv preprint arXiv:2606.08728},
   year    = {2026}
 }
@@ -548,5 +548,5 @@ This repository's content (the curated list, summaries, and figures) is released
 ---
 
 <div align="center">
-<sub>Made with care for the AI-for-mathematics community. Last updated <strong>May 2026</strong>.</sub>
+<sub>Made with care for the AI-for-mathematics community. Last updated <strong>July 2026</strong>.</sub>
 </div>
