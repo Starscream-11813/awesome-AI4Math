@@ -8,7 +8,7 @@
 <a href="https://arxiv.org/abs/2606.08728"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2606.08728-b31b1b.svg?style=flat"></a>
 <a href="#citation"><img alt="Citation" src="https://img.shields.io/badge/BibTeX-cite-blue.svg?style=flat"></a>
 <a href="#license"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat"></a>
-<img alt="Last updated" src="https://img.shields.io/badge/last%20updated-May%202026-informational.svg?style=flat">
+<img alt="Last updated" src="https://img.shields.io/badge/last%20updated-July%202026-informational.svg?style=flat">
 <img alt="Papers" src="https://img.shields.io/badge/papers-238-orange.svg?style=flat">
 <img alt="Visitors" src="https://hits.sh/github.com/Starscream-11813/awesome-AI4Math.svg?style=flat&logo=github&label=Visitors&color=b57edc">
 </p>
@@ -53,7 +53,7 @@ What began in the mid-1960s as brittle pattern-matching programs for templated a
 
 ## Visual Overview
 
-**Paradigm chronology** — seven swimlanes from STUDENT (1965) to verified discovery (2026):
+**Paradigm chronology** — seven swimlanes from STUDENT (1964) to verified discovery (2026):
 
 <div align="center">
 <img src="images/timeline.png" alt="Chronology of AI systems for mathematical reasoning" width="100%">
